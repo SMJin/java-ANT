@@ -21,3 +21,18 @@
 ###### [이미지 출처](https://cornswrold.tistory.com/565?category=806549, "빌드툴이란 무엇인가?")
 
 ## What is ANT ?
+- java + xml 기반의 build tool.
+- 환경에 독립적 (운영체제가 다르거나 IDE가 달라도 같은 프로젝트 진행 가능)
+- java 소스를 클래스(.class)파일로 compile 해서 배포본으로 변경해주고 API문서를 생성하는 등의 일련의 작업들을 "단 한번의 Batch 작업"으로 처리할 수 있도록 해주는 프로그램.
+- 미리 정의된 태스크(task)를 이용하여 batch 작업 수행.
+- 새로운 task의 추가로 batch 작업을 확장 가능.
+- \bin : 실행 파일 (Ant 환경 변수 설정시에 이 경로로 ANT_HOME 지정)
+- \lib : 핵심 package나 xml parser 등등 핵심 class library 보유.
+
+## ANT의 구성요소
+- project : 프로젝트 자체를 정의. 하나의 build.xml 당 하나의 프로젝트를 지님.
+- target : 프로젝트가 수행할 작업 단위
+- task : 프로젝트가 수행할 더 작은 작업의 단위
+- property : Built-in Properties(시스템에 이미 만들어져있는 프로퍼티) / User defined Properties (사용자 지정 프로퍼티)
+##### [Ant 구성요소 : 자세히](https://javacan.tistory.com/entry/60)
+##### [Ant 간단한 예제](https://www.tutorialspoint.com/ant/ant_ifelse_arguments.htm)
