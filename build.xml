@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project name="sample" basedir="." default="rabbit">
+	<target name="animal" if="onlyAnimal">
+		<echo>This is animals</echo>
+		<javac srcdir="./src/animal" destdir="./bin" includeantruntime="false">
+		</javac>
+	</target>
+	<target name="rabbit" depends="animal" if="onlyAnimal">
+		<echo>깡총깡총</echo>
+		<java classpath="./bin" classname="animal.Rabbit">
+		</java>
+	</target>
+	<target name="tiger" depends="animal" if="onlyAnimal">
+		<echo>으르렁 어흥</echo>
+		<java classpath="./bin" classname="animal.Tiger">
+		</java>
+	</target>
+	<target name="fruit" unless="onlyAnimal">
+		<echo>This is fruits</echo>
+		<javac srcdir="./src/fruit" destdir="./bin" includeantruntime="false">
+		</javac>
+	</target>
+	<target name="apple" depends="fruit" unless="onlyAnimal">
+		<echo>와삭! 와삭!</echo>
+		<java classpath="./bin" classname="fruit.Apple">
+		</java>
+	</target>	
+	<target name="grape" depends="fruit" unless="onlyAnimal">
+		<echo>꿀떡. 시고 맛있는 포도</echo>
+		<java classpath="./bin" classname="fruit.Grape">
+		</java>
+	</target>	
+</project>
